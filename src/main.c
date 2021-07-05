@@ -37,8 +37,13 @@ int main(int argc, char * argv[]) {
     char * contents = malloc(sizeof(char) * FILE_READ_BUFFER_SIZE);
     fread(contents, 1, FILE_READ_BUFFER_SIZE, input_file_p);
 
+    struct PARSE_DATA_BY_LINE parse_data = parse_to_by_line(contents);
 
-    char ** lines = parse(contents);
+    char ** line0 = parse_data_by_space(parse_data.lines[0]);
+
+    printf("%s\n", line0[0]);
+    printf("%s\n", line0[1]);
+    
 
     return EXIT_SUCCESS;
 }

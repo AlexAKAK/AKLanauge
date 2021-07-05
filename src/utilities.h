@@ -9,3 +9,13 @@ unsigned int number_of_lines(const char * s) {
     }
     return lines;
 }
+
+unsigned int number_of_tokens(const char * s) {
+    unsigned int lines = 1;
+
+    unsigned int i = 0;
+    for (i; i < strlen(s); i++) {
+        if (s[i] == ' ') lines++;
+    }
+    return lines;
+}
