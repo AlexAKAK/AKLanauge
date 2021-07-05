@@ -20,6 +20,7 @@ parse the const char * from the file
 */
 
 int main(int argc, char * argv[]) {
+    printf("Running program\n");
     if (argc == 1) {
         printf("%s\n", "No input file provided");
         return EXIT_FAILURE;
@@ -34,16 +35,10 @@ int main(int argc, char * argv[]) {
 
     FILE * input_file_p = fopen(run_dir, "r");
     char * contents = malloc(sizeof(char) * FILE_READ_BUFFER_SIZE);
-    contents[0] = '\0';
-    
-    size_t contents_length = fread(contents, 1, FILE_READ_BUFFER_SIZE, input_file_p);
-    
-    char ** contents_by_line = parse_1(contents);
+    fread(contents, 1, FILE_READ_BUFFER_SIZE, input_file_p);
 
 
-    
-  
-    
+    char ** lines = parse(contents);
 
     return EXIT_SUCCESS;
 }
