@@ -1,7 +1,8 @@
 #include <string.h>
 #include <stdlib.h>
-#include "utilities.h"
 #include <stdio.h>
+
+#include "utilities.h"
 
 char ** parse_1(const char * contents) {
     char ** contents_by_line = (char **) malloc(sizeof(char*) * number_of_lines(contents));
@@ -14,6 +15,7 @@ char ** parse_1(const char * contents) {
     for (i; i< length; i++) {
         if (contents[i] == '\n') {
             // add the line to the x element
+            contents_by_line[x] = '\0'; // add the null byte to the block of memory pointed to by the pointer at block 0 of the char**
             strncat(contents_by_line[x], contents, i - 1);
             x++;
             // moves the pointer 
@@ -23,6 +25,10 @@ char ** parse_1(const char * contents) {
     }
 
 
-    free((void*) contents);
+    //free((void*) contents);
     return contents_by_line;
+}
+
+char ** parse(const char * contents) {
+    
 }
