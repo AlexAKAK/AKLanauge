@@ -1,4 +1,2 @@
-test souse
-aeg
-aegaeg
-aeg
+print hi
+print what's up

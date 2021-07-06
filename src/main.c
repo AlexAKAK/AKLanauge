@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "parse.h"
+#include "interpret.h"
 
 #define FILE_READ_BUFFER_SIZE 10000
 
@@ -14,10 +15,10 @@ load the file
 parse the const char * from the file
     look for the first whitespace, then stop. That is the command
     everything else is input
-
-
-
 */
+
+
+
 
 int main(int argc, char * argv[]) {
     printf("Running program\n");
@@ -37,15 +38,12 @@ int main(int argc, char * argv[]) {
     char * contents = malloc(sizeof(char) * FILE_READ_BUFFER_SIZE);
     fread(contents, 1, FILE_READ_BUFFER_SIZE, input_file_p);
 
-    struct PARSE_DATA_BY_LINE parse_data = parse_to_by_line(contents);
+    struct PARSE_DATA_BY_LINE parse_data_by_line = parse_to_by_line(contents);
 
-    char ** line0 = parse_data_by_space(parse_data.lines[0]);
-
-    printf("%s\n", line0[0]);
-    printf("%s\n", line0[1]);
-    
-
-    return EXIT_SUCCESS;
+    // check if there are errors. interpret(parse_data_by_line) returns 1 if there is an error
+    const unsigned char result_from_interpretation = interpret(parse_data_by_line);
+    if (result_from_interpretation == 1) return EXIT_FAILURE;
+    else return EXIT_SUCCESS;
 }
 
 

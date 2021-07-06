@@ -3,12 +3,7 @@
 #include <stdio.h>
 
 #include "utilities.h"
-
-struct PARSE_DATA_BY_LINE {
-    char ** lines;
-    unsigned int lines_count;
-};
-
+#include "structs.h"
 
 
 struct PARSE_DATA_BY_LINE parse_to_by_line(char * contents) {
@@ -32,9 +27,11 @@ struct PARSE_DATA_BY_LINE parse_to_by_line(char * contents) {
 
 }
 
+struct PARSE_DATA_FOR_LINE parse_data_by_space(char * line) {
+    struct PARSE_DATA_FOR_LINE parse_data_for_line;
 
-char ** parse_data_by_space(char * line) {
-    char ** tokens = malloc(sizeof(char*) * number_of_tokens(line));
+    unsigned int tokens_count = number_of_tokens(line);
+    char ** tokens = malloc(sizeof(char*) * tokens_count);
 
     char * token = strtok(line, " ");
     unsigned int i = 0;
@@ -45,9 +42,13 @@ char ** parse_data_by_space(char * line) {
     }
 
 
+    parse_data_for_line.line = tokens;
+    parse_data_for_line.tokens_count = tokens_count;
 
 
-    return tokens;
+
+
+
+    return parse_data_for_line;
 
 }
-
