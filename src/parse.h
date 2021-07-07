@@ -21,7 +21,7 @@ struct PARSE_DATA_BY_LINE parse_to_by_line(char * contents) {
         token = strtok(NULL, "\n");
     }
 
-    parse_data.lines_count = i + 1;
+    parse_data.lines_count = i;
 
 
     return parse_data;

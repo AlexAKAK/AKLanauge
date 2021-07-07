@@ -8,7 +8,4 @@ void print_func(char ** after_call, unsigned int token_count) {
     }
     printf("\n");
 
-
-    printf("End print_func\n");
-
 }

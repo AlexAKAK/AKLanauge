@@ -22,8 +22,6 @@ unsigned int number_of_tokens(const char * s) {
     unsigned int i = 0;
     for (i; i < strlen(s); i++) {
         if (s[i] == ' ') {
-            printf("space found\n");
-            printf("In Number of tokens %i\n", lines);
             lines++;
             
         }
@@ -35,9 +33,7 @@ unsigned int number_of_tokens(const char * s) {
 
 char * char_pp_to_char_p(char ** pp, unsigned int length_of_pp) {
     unsigned int x = 0;
-    printf("%i\n", length_of_pp);
     for (x; x<length_of_pp; x++) {
-        printf("%s\n", pp[x]);
     }
 
 
