@@ -1,11 +1,14 @@
 #include "./../utilities.h"
 
 void print_func(char ** after_call, unsigned int token_count) {
-    char * after_concatenated = char_pp_to_char_p(after_call, number_of_tokens(after_call));
+    unsigned int i = 0;
+    unsigned int after_token_count = token_count - 1;
+    for (i;i<after_token_count;i++) {
+        printf("%s ", after_call[i]);
+    }
+    printf("\n");
 
-    printf(after_concatenated);
 
-
-
+    printf("End print_func\n");
 
 }

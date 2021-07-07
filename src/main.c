@@ -39,6 +39,7 @@ int main(int argc, char * argv[]) {
     fread(contents, 1, FILE_READ_BUFFER_SIZE, input_file_p);
 
     struct PARSE_DATA_BY_LINE parse_data_by_line = parse_to_by_line(contents);
+    parse_data_by_line.lines_count--;
 
     // check if there are errors. interpret(parse_data_by_line) returns 1 if there is an error
     const unsigned char result_from_interpretation = interpret(parse_data_by_line);

@@ -5,7 +5,8 @@
 #include "utilities.h"
 #include "structs.h"
 
-
+#ifndef PARSE_STRUCTS
+#define PARSE_STRUCTS
 struct PARSE_DATA_BY_LINE parse_to_by_line(char * contents) {
 
     struct PARSE_DATA_BY_LINE parse_data;
@@ -52,3 +53,4 @@ struct PARSE_DATA_FOR_LINE parse_data_by_space(char * line) {
     return parse_data_for_line;
 
 }
+#endif

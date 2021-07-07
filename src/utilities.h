@@ -21,7 +21,12 @@ unsigned int number_of_tokens(const char * s) {
 
     unsigned int i = 0;
     for (i; i < strlen(s); i++) {
-        if (s[i] == ' ') lines++;
+        if (s[i] == ' ') {
+            printf("space found\n");
+            printf("In Number of tokens %i\n", lines);
+            lines++;
+            
+        }
     }
     return lines;
 }
@@ -29,13 +34,23 @@ unsigned int number_of_tokens(const char * s) {
 
 
 char * char_pp_to_char_p(char ** pp, unsigned int length_of_pp) {
+    unsigned int x = 0;
+    printf("%i\n", length_of_pp);
+    for (x; x<length_of_pp; x++) {
+        printf("%s\n", pp[x]);
+    }
+
+
+
     char * p = malloc(sizeof(char) * length_of_pp);
     p[0] = '\0';
 
     unsigned int i = 0;
     for (i; i < length_of_pp; i++) {
-        strncat(p, pp[i], strlen(pp[i]));
-        strncat(p, " ", 1);
+        //strncat(p, pp[i], strlen(pp[i]));
+        //strncat(p, " ", 1);
+        strcat(p, pp[i]);
+        strcat(p, " ");
     }
 
     // remove the last space by replacing it with a null byte

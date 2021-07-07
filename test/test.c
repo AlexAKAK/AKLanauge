@@ -3,16 +3,9 @@
 #include <string.h>
 
 int main(void) {
-    
-    char ** array = malloc(sizeof(char*) * 10);
+    char a[1];
 
-
-    char s[] = "hey guys what's going on";
-    printf(strtok(s, " "));
-    printf(strtok(s, " "));
-    printf(strtok(s, " "));
-    printf(strtok(s, " "));
-
+    printf("%i\n", sizeof(a));
 
 
     
