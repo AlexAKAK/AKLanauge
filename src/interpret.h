@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "functions/print.h"
+#include "functions/println.h"
 #include "functions/exit.h"
 #include "parse.h"
 #include "structs.h"
@@ -48,6 +49,10 @@ int interpret_line(char ** line, unsigned int tokens_count) {
         exit_func(after_call, tokens_count);
     }
 
+
+    else if (strcmp(function, "println") == 0) {
+        println_func(after_call, tokens_count);
+    }
 
     else {
         printf("Invalid function call: %s. Aborting runtime.", function);

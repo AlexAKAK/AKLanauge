@@ -19,9 +19,6 @@ parse the const char * from the file
     everything else is input
 */
 
-
-
-
 int main(int argc, char * argv[]) {
     printf("[AKScript]\n\n\n\n");
     if (argc == 1) {

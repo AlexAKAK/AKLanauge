@@ -19,6 +19,7 @@
 ---
 ## Functionality
 ### print [string: string]
+### println [string: string]
 ### exit [code: int]
 ---
 ---
