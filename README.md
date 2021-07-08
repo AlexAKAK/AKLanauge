@@ -18,6 +18,7 @@
 ### If you ever feel like contributing to the project, feel free to make a pull request and I can take a look at your source code.
 ---
 ## Functionality
-### print <string>
+### print [string: string]
+### exit [code: int]
 ---
 ---
