@@ -1,4 +1,3 @@
-print what's up
-println hi!
-print sus
-exit 1
+print hi
+println hey what's up!
+exit

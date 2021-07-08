@@ -3,8 +3,10 @@
 #include "./../boolean.h"
 
 
-BOOLEAN declare_func(char ** after_call, unsigned int token_count) {
-    if (at_least_two_args_required_err_check(after_call, token_count) == TRUE) return FALSE;
+
+
+BOOLEAN declare_func(char ** after_call, unsigned int token_count, unsigned int line_number) {
+    if (at_least_two_args_required_err_check(after_call, token_count, line_number, "declare") == TRUE) return FALSE;
     char * type = after_call[0];
     
 

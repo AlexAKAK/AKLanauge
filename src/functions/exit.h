@@ -3,8 +3,10 @@
 #include "./../boolean.h"
 
 
-BOOLEAN exit_func(char ** after_call, unsigned int token_count) {
-    if (at_least_one_arg_required_err_check(after_call, token_count) == TRUE) return FALSE;
+
+
+BOOLEAN exit_func(char ** after_call, unsigned int token_count, unsigned int line_number) {
+    if (at_least_one_arg_required_err_check(after_call, token_count, line_number, "exit") == TRUE) return FALSE;
 
 
     printf("-----------Aborting runtime-----------\n");

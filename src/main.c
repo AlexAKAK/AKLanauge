@@ -33,15 +33,14 @@ int main(int argc, char * argv[]) {
     }
 
 
-    
     char * contents = read_file(fp);
 
     struct PARSE_DATA_BY_LINE parse_data_by_line = parse_to_by_line(contents);
     //parse_data_by_line.lines_count--;
 
     // check if there are errors. interpret(parse_data_by_line) returns 1 if there is an error
-    const unsigned char result_from_interpretation = interpret(parse_data_by_line);
-    if (result_from_interpretation == 1) return EXIT_FAILURE;
+    const BOOLEAN result_from_interpretation = interpret(parse_data_by_line);
+    if (result_from_interpretation == EXIT_FAILURE) return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
 
