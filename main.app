@@ -1,1 +1,2 @@
-print hi there
+print hello world!
+print this is a test.
