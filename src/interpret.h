@@ -7,6 +7,7 @@
 #include "functions/exit.h"
 #include "parse.h"
 #include "structs.h"
+#include "boolean.h"
 
 int interpret_line(char**, unsigned int);
 int interpret(struct PARSE_DATA_BY_LINE);
@@ -42,16 +43,16 @@ int interpret_line(char ** line, unsigned int tokens_count) {
         //printf("CALLING PRINT FUNCTION\n");
         // convert the char ** to char * because the entire structure is to be treated as one string
 
-        print_func(after_call, tokens_count);
+        BOOLEAN result = print_func(after_call, tokens_count);
     }
 
     else if (strcmp(function, "exit") == 0) {
-        exit_func(after_call, tokens_count);
+        BOOLEAN result = exit_func(after_call, tokens_count);
     }
 
 
     else if (strcmp(function, "println") == 0) {
-        println_func(after_call, tokens_count);
+        BOOLEAN result = println_func(after_call, tokens_count);
     }
 
     else {

@@ -10,13 +10,7 @@
 #define FILE_READ_BUFFER_SIZE 10000
 
 /*
-steps in compilation
-----
-open the file
-load the file
-parse the const char * from the file
-    look for the first whitespace, then stop. That is the command
-    everything else is input
+Figure out how memory will work
 */
 
 int main(int argc, char * argv[]) {

@@ -1,6 +1,4 @@
-print hello world!
-print this is a test.
-println hi
-print test
-exit 1
+print what's up
+println hi!
 print sus
+exit 1
