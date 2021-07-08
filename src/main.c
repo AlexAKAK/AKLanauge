@@ -51,7 +51,6 @@ int main(int argc, char * argv[]) {
     // check if there are errors. interpret(parse_data_by_line) returns 1 if there is an error
     const unsigned char result_from_interpretation = interpret(parse_data_by_line);
     if (result_from_interpretation == 1) return EXIT_FAILURE;
-    printf("\n\n\n\n[/AKScript]");
     return EXIT_SUCCESS;
 }
 

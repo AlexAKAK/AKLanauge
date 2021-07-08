@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "functions/print.h"
+#include "functions/exit.h"
 #include "parse.h"
 #include "structs.h"
 
@@ -41,6 +42,10 @@ int interpret_line(char ** line, unsigned int tokens_count) {
         // convert the char ** to char * because the entire structure is to be treated as one string
 
         print_func(after_call, tokens_count);
+    }
+
+    else if (strcmp(function, "exit") == 0) {
+        exit_func(after_call, tokens_count);
     }
 
 
